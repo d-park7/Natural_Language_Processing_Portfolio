@@ -1,0 +1,5 @@
+# Vscode
+.vscode/*
+
+# Pickle files
+*.p

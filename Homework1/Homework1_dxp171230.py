@@ -1,4 +1,4 @@
-import sys
+import pickle
 import re
 import argparse 
 import csv
@@ -6,8 +6,6 @@ import os
 
 
 class Person:
-    """Person with first, last name and other..."""
-
     def __init__(self, last, first, mi, id, phone):
         self.last = last
         self.first = first 
@@ -16,77 +14,103 @@ class Person:
         self.phone = phone 
         
     def display(self):
-        print(f"Employee list:\n\nEmployee id: {self.id}\n\t{self.first} {self.mi} {self.last}\n\t{self.phone}")
+        print(f"\nEmployee id: {self.id}\n\t{self.first} {self.mi} {self.last}\n\t{self.phone}")
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Read csv file")
+    """Parses through the system arguments that user provides
+    Using argparse allows more informative descriptions and is a more specified use case
+    rather than sys
+    """
+    parser = argparse.ArgumentParser(description="Read multiple People objects from csv file")
     parser.add_argument(
         "-f",
         "--file_name",
         type=str,
-        required=False,
+        required=True,
         help="Name of csv file"
     )
     args = parser.parse_args()
     return args
 
 
-# TOOD: change to dict of lines using file.read().splitlines()
-# separate the functionality to separate functions
-#  1: parse the csv into a dict
-#  2: other remaining functionality
-def user_parse_csv(filepath: str):
+def parse_csv_into_dict(filepath: str):
+    """Parses a csv file of Person objects into a dictionary of Person objects
+    
+    Input string must be path to csv file
+    
+    Returns:
+        dict: {Person.id: Person object}
+        or
+        empty dict
+    """
+    person_dict = {}
     try:
-        with open(os.path.join(os.getcwd(), filepath), encoding="utf-8-sig") as file:
-            dict_of_lines = file.read().splitlines()
-            print("dict of lines: ", dict_of_lines)
+        with open(os.path.join(os.getcwd(), filepath), encoding="utf-8") as file:
             csv_reader = csv.reader(file, delimiter=',')
-            print(csv_reader)
             line_count = 0
             
             for row in csv_reader:
+                last_name = row[0]
+                first_name = row[1]
+                middle_initial = row[2]
+                id = row[3]
+                phone = row[4]
+
                 if line_count == 0:
                     line_count += 1
                 else:
-                    row[0] = row[0].capitalize()
-                    row[1] = row[1].capitalize()
-                    if not row[2]:
-                        row[2] = 'X'
+                    last_name = last_name.capitalize()
+                    first_name = first_name.capitalize()
+
+                    if not middle_initial:
+                        middle_initial = 'X'
                     else:
-                        row[2] = row[2].upper()
+                        middle_initial = middle_initial.upper()
 
-                    print(f"last name: {row[0]}")
-                    print(f"first name: {row[1]}")
-                    print(f"MI: {row[2]}")
-                    
-                    if not check_id(row[3]):
-                        change_id(row[3])
+                    while not is_correct_id(id):
+                        id = input("Please enter a valid id: ")
+                    while not is_correct_phone(phone):
+                        phone = input("Enter phone number: ")
 
+                    new_person = Person(last=last_name, first=first_name, mi=middle_initial, id=id, phone=phone)
+                    person_dict.update({id: new_person})
                     line_count += 1
 
+    # catching path file naming errors
     except OSError as err:
         print("OS error:" , err)
     except Exception as err:
         print(f"Unexpected {err=}, {type(err)=}")
+    finally:
+        return person_dict
+    
 
-
-def check_id(id: str):
+def is_correct_id(id: str):
     regex_match = re.match(r"[a-z]{2}[0-9]{4}$", id, re.IGNORECASE)
     if not regex_match:
-        print("ID invalid: {id}")
+        print(f"ID invalid: {id}")
         print("ID is two letters followed by 4 digits")
-        change_id()
+        return False
+    return True
 
 
-def change_id(id: str):
-    return
+def is_correct_phone(phone: str):
+    regex_match = re.match(r"[0-9]{3}-[0-9]{3}-[0-9]{4}$", phone)
+    if not regex_match:
+        print(f"Phone {phone} is invalid")
+        print("Enter phone number in form 123-456-7890")
+        return False
+    return True
 
 
 if __name__ == '__main__':
-    #process_csv('data/data.csv')
     args = parse_args()
-    user_parse_csv(args.file_name)
+    person_dict = parse_csv_into_dict(args.file_name)
 
-    person = Person('Doe', 'John', 'R', 9, '123-123-1231')
-    person.display()
+    pickle.dump(person_dict, open("data/people.p", "wb"))
+    pickle_dict = pickle.load(open("data/people.p", "rb"))
+
+    print("\n\nEmployee list:")
+    for person in pickle_dict:
+        pickle_dict[person].display()
