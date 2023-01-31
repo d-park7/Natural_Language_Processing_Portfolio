@@ -1,0 +1,16 @@
+About Homework1
+
+This command line program reads a csv file which contains people and then outputs the list of people.
+In addition, it asks the user to re-enter incorrectly formatted data
+
+To run:
+python3 Homework1.py -f data/data.csv
+
+Strenghts and weaknesses of text processing in Python:
+Python is very flexible and easy to text processes with.
+It provides many native libraries that lets the user manipulate the files.
+
+Learning points:
+I learned how to process a csv file in Python.
+In addition, I learned syntax of Python more throughly and the nuances of Python vs traditionl OOP languages like Java.
+Lastly, I was able to review regexes and how to specifically implement them in Python.
