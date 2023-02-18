@@ -86,7 +86,7 @@ def guessing_game(noun_list: list):
     """
     points = 5
     seed(1234)
-    chooser = randint(1, 49)
+    chooser = randint(0, 49)
     answer = list(noun_list[chooser])
     already_guessed = set()
     display = list('_' * len(answer))
