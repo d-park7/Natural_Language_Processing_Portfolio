@@ -92,7 +92,7 @@ def guessing_game(noun_list: list):
     display = list('_' * len(answer))
 
     # Uncomment to view answer for dev purposes
-    print(*answer)
+    #print(*answer)
 
     # convert answer to a Set for easier game handling
     set_answer = set(answer)
