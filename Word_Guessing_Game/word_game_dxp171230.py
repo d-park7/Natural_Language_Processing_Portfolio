@@ -96,6 +96,7 @@ def guessing_game(noun_list: list):
 
     # convert answer to a Set for easier game handling
     set_answer = set(answer)
+    print(set_answer)
     print('Let\'s play a word guessing game!')
     while already_guessed != set_answer:
         print(*display)
@@ -123,6 +124,7 @@ def guessing_game(noun_list: list):
             points -= 1
             print(f'Sorry, guess again. Score is {points}')
     
+    print(*display)
     print('You solved it!')
     print('Current score: ', points)
     
