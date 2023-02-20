@@ -1,6 +1,7 @@
 from nltk import word_tokenize, pos_tag
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
+import nltk
 import itertools
 from random import seed, randint
 import re
@@ -96,7 +97,6 @@ def guessing_game(noun_list: list):
 
     # convert answer to a Set for easier game handling
     set_answer = set(answer)
-    print(set_answer)
     print('Let\'s play a word guessing game!')
     while already_guessed != set_answer:
         print(*display)
@@ -131,6 +131,7 @@ def guessing_game(noun_list: list):
 
 if __name__ == "__main__":
     args = parse_args()
+    nltk.download('averaged_perceptron_tagger')
 
     contents = parse_text_file(args.file_name)
     lexical_diversity = calc_lexical_diversity(contents)
