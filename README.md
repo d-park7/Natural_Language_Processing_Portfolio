@@ -17,3 +17,8 @@
 
 
 ### [Sentence Parsing](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Parsing_Sentences/Sentence%20Parsing.pdf)
+
+
+
+### [Web Crawler](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Web_Crawler/main.py)
+## [Report of Web Crawler](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Web_Crawler/Report.pdf)
