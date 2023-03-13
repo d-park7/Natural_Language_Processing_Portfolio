@@ -25,9 +25,7 @@ def parse_args():
 
 def parse_text_file(file_name: str) -> str:
     """Parse a text file into a string
-
     Input: file name
-
     Returns: string
     """
     try:
@@ -45,7 +43,6 @@ def normalize_text(text: str):
     """Normalize the text using nltk
     
     Input: string
-
     Return: List of all tokens AND Set of nouns
     """
     # clean text and tokenize
@@ -82,7 +79,6 @@ def guessing_game(noun_list: list):
     """Guessing game similar to hangman of tokenized nouns
     
     Input: List of noun tokens
-
     Return: None
     """
     points = 5
