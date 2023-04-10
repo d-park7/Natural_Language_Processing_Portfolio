@@ -22,3 +22,6 @@
 
 ### [Web Crawler](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Web_Crawler/main.py)
 ## [Report of Web Crawler](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Web_Crawler/Report.pdf)
+
+
+### [Summary of *End-to-End Modeling via Information Tree for One-Shot Natural Language Spatial Video Grounding*](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/ACL%20Paper%20Summary.pdf)
