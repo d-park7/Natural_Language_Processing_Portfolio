@@ -1,10 +1,11 @@
 Technical Skills:
-  WordNet
-  Python
-  Web Scrapping
-  Web Crawling
-  NLTK
-  Google Dialogflow ES
+  Used WordNet to map user interests in foods to real food items in the chatbot 
+  Python was used throughout the course
+  Web scrapping/crawling was utilized to produce the knowledge base for the chatbot 
+  NLTK was used through most of the course to do basic NLP techniques, such as, tokenization
+  Google Dialogflow ES was used as our primary driver  for the chatbot
+  Python Flask was used to build out the GUI of the chatbot
+  
   
  Soft Skills:
   Project management
