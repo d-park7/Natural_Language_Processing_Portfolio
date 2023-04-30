@@ -1,0 +1,13 @@
+Technical Skills:
+  WordNet
+  Python
+  Web Scrapping
+  Web Crawling
+  NLTK
+  Google Dialogflow ES
+  
+ Soft Skills:
+  Project management
+  Teamwork
+  Scheduling conflict resolution
+  Communication in a team setting
