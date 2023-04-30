@@ -1,5 +1,12 @@
 # Natural_Language_Processing_Portfolio
 
+
+This portfolio is built during my time at The University of Texas at Dallas Natural Language Processing course. Throughout this course,
+we have used many NLP and data retrieval techniques, such as, using NLTK, parsing user inputs, and tokenization. While completing the assingments,
+I have noticed that NLP is a rapidly growing field. This field has a lot of potential to better our daily lives by assisting users complete tasks.
+In the future, I plan on possibly extending the chatbot we have created.
+
+
 ### [NLP Resume](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/NLP_Resume.txt)
 
 ### [Overview of NLP](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Homework0/Overview_of_NLP.pdf)
