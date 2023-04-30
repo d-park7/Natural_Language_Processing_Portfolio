@@ -1,5 +1,7 @@
 # Natural_Language_Processing_Portfolio
 
+### [NLP Resume](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/NLP_Resume.txt)
+
 ### [Overview of NLP](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Homework0/Overview_of_NLP.pdf)
 
 ### [Homework 1](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/Homework1/Homework1.py)
@@ -25,3 +27,6 @@
 
 
 ### [Summary of *End-to-End Modeling via Information Tree for One-Shot Natural Language Spatial Video Grounding*](https://github.com/d-park7/Natural_Language_Processing_Portfolio/blob/main/ACL%20Paper%20Summary.pdf)
+
+
+### [Chatbot](https://github.com/d-park7/Natural_Language_Processing_Portfolio/tree/main/Cooking_Chatbot)
